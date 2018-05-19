@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">	
+</head>
+<body >
+	<div class="container" ng-controller="AppCtrl">
+  <div class="commands-wrapper">
+  	<h3>Starting position </h3>
+  	<form ng-model="initial" ng-submit="submit(initial)">
+        <div class="form-group">
+  		<label for="zone-boundry">Zone Boundry</label>
+  		<input type="text" ng-model="initial.zone" ng-required name="zone-boundry" max-length="2" placeholder="88">
+        </div>
+  		<div class="form-group">
+  			<label for="x-axis">X-axis</label>
+  			<input type="text" ng-model="initial.x" ng-required name="x-axis" max-length="2" placeholder="1">
+  		</div>
+  		<div class="form-group">
+  			<label for="y-axis">Y-axis</label>
+  			<input type="text" ng-model="initial.y" ng-required name="y-axis" max-length="2" placeholder="2">
+  		</div>
+  		<div class="form-group">
+  			<label for="direction">Direction</label>
+  			<input type="text" ng-model="initial.direction" ng-required max-length="1" name="direction" placeholder="E">
+  		</div>
+  		
+
+  		<fieldset>
+  			<div class="form-group">
+  			<label for="instructions">Move Instructions</label>
+  			<input type="text" ng-model="initial.move" ng-required name="movement" placeholder="MMLMRMMRRMML">
+  			<div class="form-group">
+  		</fieldset>
+
+  		<div class="form-group">
+  			<button type="submit" class="btn-primary btn" name="submit">Move Rover</button>
+  		</div>
+  		
+  		
+  	</form>
+  </div>
+  <div class="rover-wrapper">
+  	<h3>Result Position</h3>
+  	<div class="results">{{result}}</div>
+  </div>
+</div>
+
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="controller.js"></script>		
+</body>
+</html>
